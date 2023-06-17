@@ -17,12 +17,12 @@ import cookies from "vue-cookies";
                     url:`${process.env.VUE_APP_BASE_DOMAIN}/api/login`,   
                     method:`POST`,
                     data:{
-                        username:this.$refs("username"),
-                        password:this.$refs("password")
+                        username:this.$refs["username"].value,
+                        password:this.$refs["password"].value
                     }
                     }).then((response)=>{
                     console.log(response);
-                    cookies.set("token")
+                    cookies.set("token",response.data)
                     }).catch((error)=>{
                     console.log(error);
                     });

@@ -17,14 +17,14 @@ import cookies from "vue-cookies";
         methods: {
             create_account() {
                 axios.request({
-                    url:`${process.env.VUE_APP_BASE_DOMAIN}/api/login`,   
+                    url:`${process.env.VUE_APP_BASE_DOMAIN}/api/client`,   
                     method:`POST`,
                     data:{
-                        username:this.$refs("username"),
-                        email:this.$refs("email"),
-                        password:this.$refs("password"),
-                        image_url:this.$refs("image_url"),
-                        bio:this.$refs("bio")
+                        username:this.$refs["username"].value,
+                        email:this.$refs["email"].value,
+                        password:this.$refs["password"].value,
+                        image_url:this.$refs["image_url"].value,
+                        bio:this.$refs["bio"].value
                     }
                     }).then((response)=>{
                     console.log(response);
