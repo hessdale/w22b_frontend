@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h3>Create Account</h3>
         <input type="text" ref="username" placeholder="UserName">
         <input type="text" ref="email" placeholder="Email">
         <input type="text" ref="password" placeholder="Password">
@@ -28,7 +29,7 @@ import cookies from "vue-cookies";
                     }
                     }).then((response)=>{
                     console.log(response);
-                    cookies.set("token")
+                    cookies.set("token",)
                     }).catch((error)=>{
                     console.log(error);
                     });             

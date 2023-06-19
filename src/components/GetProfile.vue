@@ -1,5 +1,6 @@
 <template>
     <div>
+        
     <article>
         <h3>{{ profile.username }}</h3>
         <p>{{ profile.email }}</p>

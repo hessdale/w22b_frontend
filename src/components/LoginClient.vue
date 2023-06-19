@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h3>Returning Users</h3>
         <input type="text" ref="username" placeholder="UserName">
         <input type="text" ref="password" placeholder="Password">
         <button @click="login">LOG IN</button>
@@ -22,7 +23,7 @@ import cookies from "vue-cookies";
                     }
                     }).then((response)=>{
                     console.log(response);
-                    cookies.set("token",response.data)
+                    cookies.set("token",response.data[0].token)
                     }).catch((error)=>{
                     console.log(error);
                     });

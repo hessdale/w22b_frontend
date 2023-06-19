@@ -18,6 +18,7 @@ import cookies from "vue-cookies";
                         token:cookies.get("token")
                     }
                     }).then((response)=>{
+                    cookies.set("token",undefined)
                     console.log(response);
                     }).catch((error)=>{
                     console.log(error);
