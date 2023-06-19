@@ -2,6 +2,7 @@
     <div>
         
     <article>
+        <!--injecting profile data into html-->
         <h3>{{ profile.username }}</h3>
         <p>{{ profile.email }}</p>
         <img :src="profile.image_url" alt="client profile picture" width="250px">
@@ -22,6 +23,7 @@ import cookies from "vue-cookies";
                 profile: undefined,
             }
         },
+        //on mount of component gets data from db using stored cookie token
         mounted () {
             axios.request({
             url:`${process.env.VUE_APP_BASE_DOMAIN}/api/client`,

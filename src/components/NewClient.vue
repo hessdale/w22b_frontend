@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!--form for client to create account and button with event listener that calls function to create account in db-->
         <h3>Create Account</h3>
         <input type="text" ref="username" placeholder="UserName">
         <input type="text" ref="email" placeholder="Email">
@@ -13,10 +14,10 @@
 <script>
 
 import axios from "axios";
-import cookies from "vue-cookies";
     export default {
         methods: {
             create_account() {
+                //axios request that calls procedure to insert new client into db
                 axios.request({
                     url:`${process.env.VUE_APP_BASE_DOMAIN}/api/client`,   
                     method:`POST`,
@@ -29,7 +30,7 @@ import cookies from "vue-cookies";
                     }
                     }).then((response)=>{
                     console.log(response);
-                    cookies.set("token",)
+                    
                     }).catch((error)=>{
                     console.log(error);
                     });             

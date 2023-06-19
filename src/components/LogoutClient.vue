@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!--button with event listener that calls function to log client out-->
 <button @click="log_out">LOG OUT</button>
     </div>
 </template>
@@ -11,6 +12,7 @@ import cookies from "vue-cookies";
     export default {
         methods: {
             log_out() {
+                //axios request that deletes token in db and stored token cookie
                 axios.request({
                     url:`${process.env.VUE_APP_BASE_DOMAIN}/api/login`,   
                     method:`DELETE`,
